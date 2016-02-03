@@ -3,10 +3,10 @@
 // L'interacteur viendra dans un second temps donc ne vous en souciez pas au départ.
 function DnD(canvas, interactor) {
 	/*Classe Dnd (qu'on définit avec une fonction qui fait office de constructeur*/
-	this.coordXinit=0;
-	this.coordYinit=0;
-	this.coordXfin=0;
-	this.coordYfin=0;
+	this.coordXinit= 0;
+	this.coordYinit= 0;
+	this.coordXfin= 0;
+	this.coordYfin= 0;
 	//variable qui indique qu'on dessine quelque chose
 	this.drawEnable = false;
 

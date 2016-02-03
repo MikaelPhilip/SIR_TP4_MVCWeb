@@ -11,20 +11,27 @@ ctx.fillStyle = '#F0F0F0'; // set canvas' background color
 ctx.fillRect(0, 0, canvas.width, canvas.height);  // now fill the canvas
 
 /////
-//Code temporaire pour tester le dessin
-var draw = new Drawing();
+
+
 // Code temporaire pour tester l'affiche de la vue
-var rec = new Rectangle(10, 20, 50, 100, 5, '#00CCC0');
+var rec = new Rectangle(10, 20, 50, 100, 5, '#0ffCC0');
 //Test d'affichage et d'ajout dans la liste du dessin
 console.log(rec);
-draw.dessins.push(rec);
-//rec.paint(ctx);
+rec.paint(ctx);
+
 var ligne = new Ligne(10, 20, 50, 100, 5, '#00CCC0');
+//Test d'affichage
 console.log(ligne);
-draw.dessins.push(ligne);
-console.log(draw);
-//ligne.paint(ctx);
+ligne.paint(ctx);
+
 // tester également Dessin.
+//Code temporaire pour tester le dessin
+//var draw = new Drawing();
+//Test d'ajout dans la liste des dessins
+//draw.dessins.push(rec);
+//draw.dessins.push(ligne);
+//Test d'affichage
+//console.log(draw);
 ////
 
 // Code final à utiliser pour manipuler Pencil.

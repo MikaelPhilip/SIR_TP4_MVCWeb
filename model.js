@@ -9,7 +9,7 @@ function Drawing(){
 
 function Shape(color, size){
 	//Initialistaion des deux variables communes à toutes les formes
-	this.color =  color;
+	this.color = color;
 	this.size = size;
 }
 
