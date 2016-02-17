@@ -7,15 +7,17 @@ function Drawing(){
 	this.dessins = new Array();
 }
 
-function Shape(color, size){
+function Shape(color, size, type){
 	//Initialistaion des deux variables communes à toutes les formes
 	this.color = color;
 	this.size = size;
+	//Ajout pour indiquer son type
+	this.type= type;
 }
 
 function Ligne(coordX1,coordY1,coordX2,coordY2,color, size){
 	//Appel de la super classe
-	Shape.call(this, color, size);
+	Shape.call(this, color, size, "ligne");
 
 	//Initialisation des coordonnées des deux points 
 	this.coordX1= coordX1;
@@ -26,7 +28,7 @@ function Ligne(coordX1,coordY1,coordX2,coordY2,color, size){
 
 function Rectangle(coordXHG,coordYHG,largeur,hauteur,color, size){
 	//Appel de la super classe
-	Shape.call(this, color, size);
+	Shape.call(this, color, size,"rectangle");
 	//Initialisation des coordonnées du point en haut à gauche
 	this.coordXHG= coordXHG;
 	this.coordYHG= coordYHG;
