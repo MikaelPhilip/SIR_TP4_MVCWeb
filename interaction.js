@@ -20,12 +20,13 @@ function DnD(canvas, interactor) {
 		//Activation du mode dessin
 		this.drawEnable = true;
 		//Test 
-		console.log("mouse down");
+		/*console.log("mouse down");
 		console.log("corXinit: "+ this.coordXinit);
 		console.log("corYinit: "+ this.coordYinit);
 		console.log("corXfin: "+ this.coordXfin);
 		console.log("corYfin: "+ this.coordYfin);
-		console.log("mode dessin "+ this.drawEnable);
+		console.log("mode dessin "+ this.drawEnable);*/
+		interactor.onInteractionStart(this); //notifier l'utilisateur
 		
 	}
 
@@ -36,27 +37,30 @@ function DnD(canvas, interactor) {
 			this.coordXfin = mousePos.x;
 			this.coordYfin = mousePos.y;
 			//Test 
-			console.log("mouse move");
+			/*console.log("mouse move");
 			console.log("corXinit: "+ this.coordXinit);
 			console.log("corYinit: "+ this.coordYinit);
 			console.log("corXfin: "+ this.coordXfin);
 			console.log("corYfin: "+ this.coordYfin);
-			console.log("mode dessin "+ this.drawEnable);
+			console.log("mode dessin "+ this.drawEnable);*/
+			interactor.onInteractionUpdate(this); //notifier l'utilisateur
 		}
+		
 	}
 
 	DnD.prototype.mouseUp = function(evt) {
 		//Desactivation mode dessin
 		if (this.drawEnable == true){
 			this.drawEnable = false;
+			interactor.onInteractionEnd(this); //notifier l'utilisateur
 		}
 		//Test 
-		console.log("mouse up");
+		/*console.log("mouse up");
 		console.log("corXinit: "+ this.coordXinit);
 		console.log("corYinit: "+ this.coordYinit);
 		console.log("corXfin: "+ this.coordXfin);
 		console.log("corYfin: "+ this.coordYfin);
-		console.log("mode dessin "+ this.drawEnable);
+		console.log("mode dessin "+ this.drawEnable);*/
 	}
 	
 	//Ajout des évenements

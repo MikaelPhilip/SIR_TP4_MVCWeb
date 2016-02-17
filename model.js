@@ -13,9 +13,9 @@ function Shape(color, size){
 	this.size = size;
 }
 
-function Ligne(coordX1,coordY1,coordX2,coordY2,taille,color){
+function Ligne(coordX1,coordY1,coordX2,coordY2,color, size){
 	//Appel de la super classe
-	Shape.call(this, color, taille);
+	Shape.call(this, color, size);
 
 	//Initialisation des coordonnées des deux points 
 	this.coordX1= coordX1;
@@ -24,9 +24,9 @@ function Ligne(coordX1,coordY1,coordX2,coordY2,taille,color){
 	this.coordY2= coordY2;
 }
 
-function Rectangle(coordXHG,coordYHG,largeur,hauteur,taille,color){
+function Rectangle(coordXHG,coordYHG,largeur,hauteur,color, size){
 	//Appel de la super classe
-	Shape.call(this, color, taille);
+	Shape.call(this, color, size);
 	//Initialisation des coordonnées du point en haut à gauche
 	this.coordXHG= coordXHG;
 	this.coordYHG= coordYHG;
