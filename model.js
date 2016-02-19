@@ -1,24 +1,24 @@
+/*Implémentation des 4 classes du site*/
 
-// Implémenter ici les 4 classes du modèle.
-// N'oubliez pas l'héritage !
-
+/*Classe dessin*/
 function Drawing(){
 	//Créer un tableau de dessins (shape)
 	this.dessins = new Array();
 }
 
+/*Super-classe forme*/
 function Shape(color, size, type){
-	//Initialistaion des deux variables communes à toutes les formes
+	//Initialisation des deux variables communes à toutes les formes
 	this.color = color;
 	this.size = size;
 	//Ajout pour indiquer son type
 	this.type= type;
 }
 
+/*Classe ligne*/
 function Ligne(coordX1,coordY1,coordX2,coordY2,color, size){
-	//Appel de la super classe
+	//Appel de la super classe (forme)
 	Shape.call(this, color, size, "ligne");
-
 	//Initialisation des coordonnées des deux points 
 	this.coordX1= coordX1;
 	this.coordY1= coordY1;
@@ -26,8 +26,9 @@ function Ligne(coordX1,coordY1,coordX2,coordY2,color, size){
 	this.coordY2= coordY2;
 }
 
+/*Classe rectangle*/
 function Rectangle(coordXHG,coordYHG,largeur,hauteur,color, size){
-	//Appel de la super classe
+	//Appel de la super classe (forme)
 	Shape.call(this, color, size,"rectangle");
 	//Initialisation des coordonnées du point en haut à gauche
 	this.coordXHG= coordXHG;

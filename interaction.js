@@ -1,19 +1,19 @@
-
 // La création d'un Dnd requière un canvas et un interacteur.
-// L'interacteur viendra dans un second temps donc ne vous en souciez pas au départ.
+/*Classe Dnd (qu'on définit avec une fonction qui fait office de constructeur*/
 function DnD(canvas, interactor) {
-	/*Classe Dnd (qu'on définit avec une fonction qui fait office de constructeur*/
+	
 	this.coordXinit= 0;
 	this.coordYinit= 0;
 	this.coordXfin= 0;
 	this.coordYfin= 0;
-	//variable qui indique qu'on dessine quelque chose
+	//Variable qui indique si on dessine quelque chose ou non
 	this.drawEnable = false;
 
 	/*On rajoute à notre classe DnD les méthodes*/
-	//Ne pas oublier de lier à la classe le prototype
+	//Ne pas oublier de lier la méthode à la classe avec le prototype
+	
 	DnD.prototype.mouseDown = function(evt) {
-		//Enregistrement des coordonnées de départs
+		//Enregistrement des coordonnées de départ
 		var mousePos = getMousePosition(canvas, evt);
 		this.coordXinit = mousePos.x;
 		this.coordYinit = mousePos.y;
@@ -32,7 +32,7 @@ function DnD(canvas, interactor) {
 
 	DnD.prototype.mouseMove = function(evt) {
 		if (this.drawEnable == true){
-			//Maj coordonnées fin
+			//Maj coordonnées de fin
 			var mousePos = getMousePosition(canvas, evt);
 			this.coordXfin = mousePos.x;
 			this.coordYfin = mousePos.y;
@@ -63,14 +63,14 @@ function DnD(canvas, interactor) {
 		console.log("mode dessin "+ this.drawEnable);*/
 	}
 	
-	//Ajout des évenements
+	//Ajout des évenements aux listeners
 	canvas.addEventListener('mousedown', this.mouseDown, false);
 	canvas.addEventListener('mousemove', this.mouseMove, false);
 	canvas.addEventListener('mouseup', this.mouseUp, false);
 };
 
 
-// Place le point de l'événement evt relativement à la position du canvas.
+//Methode qui place le point de l'événement evt relativement à la position du canvas.
 function getMousePosition(canvas, evt) {
   var rect = canvas.getBoundingClientRect();
   return {
